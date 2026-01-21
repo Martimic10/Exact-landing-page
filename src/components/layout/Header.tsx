@@ -1,0 +1,247 @@
+"use client";
+
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+
+const navLinks = [
+  { label: "Features", href: "#features" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "FAQ", href: "#faq" },
+];
+
+const resourceLinks = [
+  { label: "Docs", href: "/docs" },
+  { label: "Changelog", href: "/changelog" },
+  { label: "Community", href: "/community" },
+];
+
+const mobileNavLinks = [
+  { label: "Features", href: "#features" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Docs", href: "/docs" },
+  { label: "Changelog", href: "/changelog" },
+  { label: "Community", href: "/community" },
+];
+
+export function Header() {
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const [buttonHovered, setButtonHovered] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [resourcesOpen, setResourcesOpen] = useState(false);
+
+  return (
+    <>
+      <motion.header
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="fixed left-0 right-0 top-0 z-50 border-b border-white/5 bg-black/80 backdrop-blur-md"
+      >
+        <div className="mx-auto w-full" style={{ paddingLeft: '15%', paddingRight: '15%' }}>
+          <nav className="flex h-16 items-center justify-between">
+            {/* Logo */}
+            <a
+              href="/"
+              className="flex items-center gap-1 text-lg font-medium text-white"
+            >
+              <img
+                src="/exact-logo.png"
+                alt="Exact"
+                style={{ height: '40px', width: 'auto' }}
+              />
+              Exact
+            </a>
+
+            {/* Center nav links - hidden on mobile */}
+            <div className="hidden items-center gap-8 md:flex">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onMouseEnter={() => setHoveredLink(link.label)}
+                  onMouseLeave={() => setHoveredLink(null)}
+                  className="text-sm transition-colors duration-200"
+                  style={{
+                    color: hoveredLink === link.label ? '#e5e7eb' : '#6b7280'
+                  }}
+                >
+                  {link.label}
+                </a>
+              ))}
+
+              {/* Resources dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => {
+                  setResourcesOpen(true);
+                  setHoveredLink("Resources");
+                }}
+                onMouseLeave={() => {
+                  setResourcesOpen(false);
+                  setHoveredLink(null);
+                }}
+              >
+                <button
+                  type="button"
+                  className="flex items-center gap-1 text-sm transition-colors duration-200"
+                  style={{
+                    color: hoveredLink === "Resources" ? '#e5e7eb' : '#6b7280'
+                  }}
+                >
+                  Resources
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    style={{
+                      transform: resourcesOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                      transition: 'transform 0.2s'
+                    }}
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </button>
+
+                <AnimatePresence>
+                  {resourcesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute left-1/2 top-full pt-4"
+                      style={{ transform: 'translateX(-50%)' }}
+                    >
+                      <div
+                        className="overflow-hidden rounded-xl border border-white/10"
+                        style={{
+                          backgroundColor: '#1a1a1a',
+                          minWidth: '200px',
+                          boxShadow: '0 20px 40px rgba(0,0,0,0.5)'
+                        }}
+                      >
+                        <div
+                          className="grid grid-cols-2 gap-x-4"
+                          style={{ padding: '16px 20px' }}
+                        >
+                          {resourceLinks.map((link) => (
+                            <a
+                              key={link.label}
+                              href={link.href}
+                              className="rounded-md px-3 py-2 text-sm text-gray-400 transition-colors hover:bg-white/5 hover:text-white"
+                            >
+                              {link.label}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
+
+            {/* Right side - Waitlist button and hamburger */}
+            <div className="flex items-center gap-3">
+              {/* Waitlist button - always visible */}
+              <a
+                href="#waitlist"
+                onMouseEnter={() => setButtonHovered(true)}
+                onMouseLeave={() => setButtonHovered(false)}
+                className="transition-all duration-200"
+                style={{
+                  border: `1px solid ${buttonHovered ? '#9ca3af' : '#6b7280'}`,
+                  borderRadius: 9999,
+                  padding: '6px 16px',
+                  color: buttonHovered ? '#ffffff' : '#d1d5db',
+                  fontSize: 14,
+                  background: 'transparent'
+                }}
+              >
+                Waitlist
+              </a>
+
+              {/* Hamburger button - visible on mobile only */}
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen(true)}
+                className="flex h-10 w-10 items-center justify-center md:hidden"
+                aria-label="Open menu"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  className="text-white"
+                >
+                  <line x1="4" y1="8" x2="20" y2="8" />
+                  <line x1="4" y1="16" x2="20" y2="16" />
+                </svg>
+              </button>
+            </div>
+          </nav>
+        </div>
+      </motion.header>
+
+      {/* Mobile menu overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-100 bg-black md:hidden"
+          >
+            {/* Close button */}
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(false)}
+              className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center"
+              aria-label="Close menu"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                className="text-white"
+              >
+                <line x1="6" y1="6" x2="18" y2="18" />
+                <line x1="6" y1="18" x2="18" y2="6" />
+              </svg>
+            </button>
+
+            {/* Mobile nav links */}
+            <nav className="flex h-full flex-col justify-start px-6 pt-48">
+              {mobileNavLinks.map((link, index) => (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="py-3 text-3xl font-medium text-white"
+                >
+                  {link.label}
+                </motion.a>
+              ))}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
