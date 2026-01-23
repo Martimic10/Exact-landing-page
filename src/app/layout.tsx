@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     "Exact is a precision developer tool built for teams who demand accuracy. Join the waitlist.",
   keywords: ["developer tools", "precision", "engineering", "software"],
   authors: [{ name: "Exact" }],
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: "Exact — Precision Developer Tools",
     description:
