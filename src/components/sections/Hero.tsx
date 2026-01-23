@@ -45,7 +45,7 @@ export function Hero() {
       >
         <div className="relative mx-auto w-full overflow-hidden rounded-2xl shadow-2xl shadow-black/50">
           <img
-            src="/exact-UI.png"
+            src="/exact-hero-mockup.png"
             alt="Exact AI Code Editor"
             className="w-full h-auto"
             style={{
