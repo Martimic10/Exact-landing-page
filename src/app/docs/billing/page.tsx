@@ -54,7 +54,7 @@ export default function BillingPage() {
         </ul>
       </div>
 
-      {/* Pro Plan */}
+      {/* Starter Plan */}
       <div
         style={{
           backgroundColor: bgSubtle,
@@ -62,6 +62,34 @@ export default function BillingPage() {
           borderRadius: '12px',
           padding: '24px',
           marginBottom: '16px',
+        }}
+      >
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
+          <h3 style={{ color: textPrimary, fontSize: '20px', fontWeight: 600, margin: 0 }}>Starter</h3>
+          <span style={{ color: textPrimary, fontSize: '28px', fontWeight: 600 }}>$12<span style={{ color: textMuted, fontSize: '14px', fontWeight: 400 }}>/month</span></span>
+        </div>
+        <p style={{ color: textSecondary, lineHeight: '1.6', marginBottom: '16px' }}>
+          For solo developers and light daily use.
+        </p>
+        <ul style={{ color: textSecondary, margin: 0, paddingLeft: '20px' }}>
+          <li style={{ marginBottom: '8px' }}>AI-assisted frontend code generation</li>
+          <li style={{ marginBottom: '8px' }}>Live UI preview while editing</li>
+          <li style={{ marginBottom: '8px' }}>Code diffs showing AI changes</li>
+          <li style={{ marginBottom: '8px' }}>Basic component-aware refactors</li>
+          <li style={{ marginBottom: '8px' }}>Standard AI models</li>
+          <li style={{ marginBottom: '8px' }}>Monthly usage limits</li>
+          <li style={{ marginBottom: '8px' }}>Personal projects</li>
+        </ul>
+      </div>
+
+      {/* Pro Plan */}
+      <div
+        style={{
+          backgroundColor: bgSubtle,
+          border: `1px solid ${borderColor}`,
+          borderRadius: '12px',
+          padding: '24px',
+          marginBottom: '32px',
           position: 'relative',
         }}
       >
@@ -82,52 +110,27 @@ export default function BillingPage() {
         </span>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
           <h3 style={{ color: textPrimary, fontSize: '20px', fontWeight: 600, margin: 0 }}>Pro</h3>
-          <span style={{ color: textPrimary, fontSize: '28px', fontWeight: 600 }}>$12<span style={{ color: textMuted, fontSize: '14px', fontWeight: 400 }}>/month</span></span>
+          <span style={{ color: textPrimary, fontSize: '28px', fontWeight: 600 }}>$24<span style={{ color: textMuted, fontSize: '14px', fontWeight: 400 }}>/month</span></span>
         </div>
         <p style={{ color: textSecondary, lineHeight: '1.6', marginBottom: '16px' }}>
-          For developers who need advanced features and unlimited AI requests.
+          Built for serious frontend developers.
         </p>
         <ul style={{ color: textSecondary, margin: 0, paddingLeft: '20px' }}>
-          <li style={{ marginBottom: '8px' }}>Everything in Free</li>
-          <li style={{ marginBottom: '8px' }}>Unlimited AI requests</li>
-          <li style={{ marginBottom: '8px' }}>Faster AI responses</li>
-          <li style={{ marginBottom: '8px' }}>Priority AI responses</li>
-          <li style={{ marginBottom: '8px' }}>Smart refactoring tools</li>
-          <li style={{ marginBottom: '8px' }}>Multi-file editing</li>
-        </ul>
-      </div>
-
-      {/* Enterprise Plan */}
-      <div
-        style={{
-          backgroundColor: bgSubtle,
-          border: `1px solid ${borderColor}`,
-          borderRadius: '12px',
-          padding: '24px',
-          marginBottom: '32px',
-        }}
-      >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-          <h3 style={{ color: textPrimary, fontSize: '20px', fontWeight: 600, margin: 0 }}>Enterprise</h3>
-          <span style={{ color: textPrimary, fontSize: '28px', fontWeight: 600 }}>Custom</span>
-        </div>
-        <p style={{ color: textSecondary, lineHeight: '1.6', marginBottom: '16px' }}>
-          For teams that need dedicated support, custom deployment, and advanced security.
-        </p>
-        <ul style={{ color: textSecondary, margin: 0, paddingLeft: '20px' }}>
-          <li style={{ marginBottom: '8px' }}>Everything in Pro</li>
-          <li style={{ marginBottom: '8px' }}>Unlimited team members</li>
-          <li style={{ marginBottom: '8px' }}>Self-hosted deployment</li>
-          <li style={{ marginBottom: '8px' }}>Role-based access control</li>
-          <li style={{ marginBottom: '8px' }}>Team polish profiles</li>
-          <li style={{ marginBottom: '8px' }}>Dedicated support</li>
-          <li style={{ marginBottom: '8px' }}>SLA guarantees</li>
+          <li style={{ marginBottom: '8px' }}>High usage included (fair use)</li>
+          <li style={{ marginBottom: '8px' }}>Priority AI models (faster & higher quality)</li>
+          <li style={{ marginBottom: '8px' }}>Advanced UI & layout-safe refactors</li>
+          <li style={{ marginBottom: '8px' }}>Component tree-aware changes</li>
+          <li style={{ marginBottom: '8px' }}>Batch & multi-file transformations</li>
+          <li style={{ marginBottom: '8px' }}>Project-wide suggestions and cleanup</li>
+          <li style={{ marginBottom: '8px' }}>Undo / change history</li>
+          <li style={{ marginBottom: '8px' }}>Commercial usage</li>
+          <li style={{ marginBottom: '8px' }}>Early access to new features</li>
         </ul>
       </div>
 
       <DocsCallout type="tip" title="Save 20% with Annual Billing">
-        <p>Switch to annual billing to save 20% on Pro plans. That&apos;s just $9.60/month
-        when billed yearly ($115.20/year).</p>
+        <p>Switch to annual billing to save 20% on paid plans. Starter is just $9.60/month
+        ($115/year) and Pro is $19.20/month ($230/year) when billed annually.</p>
       </DocsCallout>
 
       {/* Billing Cycle */}

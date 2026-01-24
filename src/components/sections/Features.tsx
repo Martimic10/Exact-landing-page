@@ -10,6 +10,7 @@ const features = [
     description:
       "AI that understands frontend. Generate components that match your design system exactly, every time.",
     cta: "See it in action",
+    bgImage: "https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=1200&q=80",
   },
   {
     id: 2,
@@ -17,6 +18,7 @@ const features = [
     description:
       "Native support for React, Vue, Svelte, and more. Exact speaks your framework's language fluently.",
     cta: "View frameworks",
+    bgImage: "https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=1200&q=80",
   },
   {
     id: 3,
@@ -24,6 +26,7 @@ const features = [
     description:
       "From prototype to production in minutes. Exact ensures your code stays clean and maintainable.",
     cta: "Learn more",
+    bgImage: "https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?w=1200&q=80",
   },
 ];
 
@@ -91,58 +94,55 @@ export function Features() {
                   </motion.a>
                 </div>
 
-                {/* Image Area */}
+                {/* Image Area with Cloud Background */}
                 <div className="relative lg:w-[60%]">
-                  <div className="relative h-48 w-full overflow-hidden sm:h-64 md:h-80 lg:h-125" style={{ backgroundColor: '#1a1a1a' }}>
-                    {index === 0 ? (
-                      /* First Feature Card - Custom Image */
-                      <div
-                        className="absolute inset-0 flex items-center justify-center"
-                        style={{ padding: '16px' }}
+                  <div className="relative h-64 w-full overflow-hidden sm:h-80 md:h-96 lg:h-125">
+                    {/* Atmospheric Cloud Background */}
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background: `url("${feature.bgImage}")`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        filter: 'brightness(0.5) saturate(0.8)',
+                      }}
+                    />
+                    {/* Gradient overlay for depth */}
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background: index === 1
+                          ? 'linear-gradient(to left, transparent 0%, rgba(10, 10, 10, 0.7) 100%)'
+                          : 'linear-gradient(to right, transparent 0%, rgba(10, 10, 10, 0.7) 100%)',
+                      }}
+                    />
+                    {/* Mockup Image */}
+                    <div
+                      className="absolute inset-0 flex items-center justify-center"
+                      style={{ padding: '24px' }}
+                    >
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="relative"
+                        style={{
+                          maxWidth: '90%',
+                          maxHeight: '90%',
+                        }}
                       >
                         <img
-                          src="/component-feature-ui.png"
-                          alt="Pixel-perfect precision"
-                          className="h-full w-full object-contain object-center"
+                          src={index === 0 ? "/component-feature-ui.png" : index === 1 ? "/react-beyond.png" : "/exact-faster.png"}
+                          alt={feature.title}
+                          className="h-full w-full object-contain"
                           style={{
-                            maxHeight: '100%',
-                            maxWidth: '100%',
+                            borderRadius: '12px',
+                            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1)',
                           }}
                         />
-                      </div>
-                    ) : index === 1 ? (
-                      /* Second Feature Card - Custom Image */
-                      <div
-                        className="absolute inset-0 flex items-center justify-center"
-                        style={{ padding: '16px' }}
-                      >
-                        <img
-                          src="/react-beyond.png"
-                          alt="Built for React & beyond"
-                          className="h-full w-full object-contain object-center"
-                          style={{
-                            maxHeight: '100%',
-                            maxWidth: '100%',
-                          }}
-                        />
-                      </div>
-                    ) : (
-                      /* Third Feature Card - Custom Image */
-                      <div
-                        className="absolute inset-0 flex items-center justify-center"
-                        style={{ padding: '16px' }}
-                      >
-                        <img
-                          src="/exact-faster.png"
-                          alt="Ship faster, stay consistent"
-                          className="h-full w-full object-contain object-center"
-                          style={{
-                            maxHeight: '100%',
-                            maxWidth: '100%',
-                          }}
-                        />
-                      </div>
-                    )}
+                      </motion.div>
+                    </div>
                   </div>
                 </div>
               </div>
