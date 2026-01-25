@@ -17,22 +17,39 @@ export function Hero() {
           {/* Headline */}
           <motion.h1
             variants={fadeInUp}
-            className="text-2xl font-medium leading-[1.1] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
+            className="text-2xl font-medium leading-[1.15] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
           >
-            AI frontend editing —
-            <br />
-            <span className="text-gray-500">without breaking your code</span>
+            AI frontend editing — without breaking your code
           </motion.h1>
 
-          {/* Subheadline */}
+          {/* Supporting line */}
           <motion.p
             variants={fadeInUp}
-            className="max-w-2xl text-base leading-relaxed text-gray-400 sm:text-lg md:text-xl"
+            className="max-w-xl text-base leading-relaxed text-gray-500 sm:text-lg mt-2"
           >
-            Exact is an AI-powered code editor built specifically for frontend UI work.
-            It applies small, diff-based component edits for layout, spacing, accessibility,
-            and polish — so changes stay predictable and safe.
+            Small, diff-based component edits for predictable UI changes.
           </motion.p>
+
+          {/* CTA Button */}
+          <motion.div variants={fadeInUp} style={{ marginTop: '40px' }}>
+            <a
+              href="#waitlist"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '14px 32px',
+                borderRadius: '10px',
+                backgroundColor: '#ffffff',
+                color: '#000000',
+                fontWeight: 600,
+                fontSize: '16px',
+                textDecoration: 'none',
+              }}
+            >
+              Join Waitlist
+            </a>
+          </motion.div>
 
         </motion.div>
       </div>
