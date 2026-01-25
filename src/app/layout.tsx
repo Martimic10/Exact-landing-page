@@ -15,27 +15,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Exact — Precision Developer Tools",
+  title: "Exact",
   description:
-    "Exact is a precision developer tool built for teams who demand accuracy. Join the waitlist.",
-  keywords: ["developer tools", "precision", "engineering", "software"],
+    "AI frontend editing — without breaking your code. Small, diff-based component edits for predictable UI changes.",
+  keywords: ["developer tools", "AI code editor", "frontend", "UI editing"],
   authors: [{ name: "Exact" }],
   icons: {
     icon: "/icon.png",
     apple: "/apple-icon.png",
   },
   openGraph: {
-    title: "Exact — Precision Developer Tools",
+    title: "Exact",
     description:
-      "Exact is a precision developer tool built for teams who demand accuracy. Join the waitlist.",
+      "AI frontend editing — without breaking your code. Small, diff-based component edits for predictable UI changes.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Exact — Precision Developer Tools",
+    title: "Exact",
     description:
-      "Exact is a precision developer tool built for teams who demand accuracy. Join the waitlist.",
+      "AI frontend editing — without breaking your code. Small, diff-based component edits for predictable UI changes.",
   },
   robots: {
     index: true,
