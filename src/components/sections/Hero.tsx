@@ -17,9 +17,11 @@ export function Hero() {
           {/* Headline */}
           <motion.h1
             variants={fadeInUp}
-            className="text-3xl font-medium leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
+            className="text-2xl font-medium leading-[1.1] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
           >
-            Code with exact precision.
+            AI frontend editing —
+            <br />
+            <span className="text-gray-500">without breaking your code</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -27,9 +29,9 @@ export function Hero() {
             variants={fadeInUp}
             className="max-w-2xl text-base leading-relaxed text-gray-400 sm:text-lg md:text-xl"
           >
-            The AI-native code editor that gets it exactly right.
-            <br />
-            No approximation. No bloat. Just perfect code, every time.
+            Exact is an AI-powered code editor built specifically for frontend UI work.
+            It applies small, diff-based component edits for layout, spacing, accessibility,
+            and polish — so changes stay predictable and safe.
           </motion.p>
 
         </motion.div>
@@ -40,7 +42,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
-        className="relative w-full max-w-md sm:max-w-2xl md:max-w-4xl lg:max-w-6xl"
+        className="relative w-full max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-4xl"
         style={{ marginTop: '48px' }}
       >
         <div className="relative mx-auto w-full overflow-hidden rounded-2xl shadow-2xl shadow-black/50">

@@ -1,4 +1,5 @@
 export { Hero } from "./Hero";
+export { Comparison } from "./Comparison";
 export { Features } from "./Features";
 export { UseCases } from "./UseCases";
 export { Benefits } from "./Benefits";

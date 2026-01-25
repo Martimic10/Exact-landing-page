@@ -6,25 +6,25 @@ import { fadeInUp } from "@/lib/animations";
 const features = [
   {
     id: 1,
-    title: "Pixel-perfect precision",
+    title: "Component Polish",
     description:
-      "AI that understands frontend. Generate components that match your design system exactly, every time.",
+      "Clean up JSX, classNames, and structure without changing behavior. Exact understands your components and makes them better.",
     cta: "See it in action",
     bgImage: "https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=1200&q=80",
   },
   {
     id: 2,
-    title: "Built for React & beyond",
+    title: "Layout & Spacing",
     description:
-      "Native support for React, Vue, Svelte, and more. Exact speaks your framework's language fluently.",
-    cta: "View frameworks",
+      "Fix alignment, spacing, and responsiveness safely. No more broken layouts from AI edits.",
+    cta: "View examples",
     bgImage: "https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=1200&q=80",
   },
   {
     id: 3,
-    title: "Ship faster, stay consistent",
+    title: "Accessibility & Refactors",
     description:
-      "From prototype to production in minutes. Exact ensures your code stays clean and maintainable.",
+      "Add semantic HTML, ARIA attributes, and keyboard support. Improve readability and consistency without changing output.",
     cta: "Learn more",
     bgImage: "https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?w=1200&q=80",
   },
@@ -37,10 +37,11 @@ export function Features() {
         {/* Section Header */}
         <div className="w-full max-w-5xl" style={{ marginBottom: '72px' }}>
           <h2 className="text-3xl font-medium leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-            Code with precision.
-            <br />
-            <span className="text-gray-500">Ship with confidence.</span>
+            Built for real frontend work
           </h2>
+          <p className="mt-6 text-lg text-gray-400 max-w-2xl">
+            Exact doesn&apos;t aim to be clever. It aims to be predictable.
+          </p>
         </div>
 
         {/* Cards Container */}

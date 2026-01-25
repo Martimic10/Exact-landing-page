@@ -185,14 +185,14 @@ export function CTA() {
               {/* Text Content - appears second on mobile */}
               <div className="order-2 flex flex-col justify-center p-6 sm:p-10 lg:order-1 lg:w-1/2 lg:p-12">
                 <h2 className="text-2xl font-medium leading-tight text-white sm:text-3xl md:text-4xl">
-                  Start coding with
+                  Frontend developers
                   <br />
-                  precision today
+                  deserve better AI tools
                 </h2>
                 <p style={{ color: '#6b7280', fontSize: '16px', lineHeight: '1.6', marginTop: '16px' }}>
-                  Free forever. Install in seconds.
+                  Exact doesn&apos;t try to do everything.
                   <br />
-                  Start building immediately.
+                  It does one thing well: UI precision.
                 </p>
 
                 {/* Email Input Form */}

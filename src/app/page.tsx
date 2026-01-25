@@ -1,7 +1,7 @@
 "use client";
 
 import { Header, PageLayout, Footer } from "@/components/layout";
-import { Hero, Features, UseCases, Benefits, Pricing, FAQ, CTA } from "@/components/sections";
+import { Hero, Comparison, Features, UseCases, Benefits, Pricing, FAQ, CTA } from "@/components/sections";
 
 export default function Home() {
   return (
@@ -9,6 +9,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Comparison />
         <Features />
         <div className="h-32 md:h-48" />
         <UseCases />
