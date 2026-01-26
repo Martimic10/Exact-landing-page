@@ -38,14 +38,20 @@ export function CTA() {
               {/* Mockup - appears first on mobile */}
               <div className="relative order-1 lg:order-2 lg:w-1/2">
                 <div className="relative h-80 w-full overflow-hidden sm:h-96 lg:h-full" style={{ minHeight: '400px' }}>
-                  {/* Background Image */}
+                  {/* Space Background Image */}
+                  <img
+                    src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200&q=80"
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover"
+                    style={{
+                      filter: 'brightness(0.4) saturate(0.8)',
+                    }}
+                  />
+                  {/* Gradient overlay */}
                   <div
                     className="absolute inset-0"
                     style={{
-                      background: 'url("https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=1200&q=80")',
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      filter: 'brightness(0.7)',
+                      background: 'linear-gradient(to right, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.3) 100%)',
                     }}
                   />
 
@@ -183,20 +189,29 @@ export function CTA() {
               </div>
 
               {/* Text Content - appears second on mobile */}
-              <div className="order-2 flex flex-col justify-center p-6 sm:p-10 lg:order-1 lg:w-1/2 lg:p-12">
+              <div
+                className="order-2 flex flex-col justify-center lg:order-1 lg:w-1/2"
+                style={{
+                  padding: '32px',
+                  paddingTop: '48px',
+                  paddingBottom: '48px',
+                  paddingLeft: '48px',
+                  paddingRight: '32px',
+                }}
+              >
                 <h2 className="text-2xl font-medium leading-tight text-white sm:text-3xl md:text-4xl">
                   Frontend developers
                   <br />
                   deserve better AI tools
                 </h2>
-                <p style={{ color: '#6b7280', fontSize: '16px', lineHeight: '1.6', marginTop: '16px' }}>
+                <p style={{ color: '#6b7280', fontSize: '15px', lineHeight: '1.7', marginTop: '20px' }}>
                   Exact doesn&apos;t try to do everything.
                   <br />
                   It does one thing well: UI precision.
                 </p>
 
                 {/* Email Input Form */}
-                <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-2 sm:flex-row">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row" style={{ marginTop: '32px' }}>
                   <input
                     type="email"
                     value={email}

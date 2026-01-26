@@ -10,7 +10,7 @@ const features = [
     description:
       "Clean up JSX, classNames, and structure without changing behavior. Exact understands your components and makes them better.",
     cta: "See it in action",
-    bgImage: "https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=1200&q=80",
+    bgImage: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200&q=80",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const features = [
     description:
       "Fix alignment, spacing, and responsiveness safely. No more broken layouts from AI edits.",
     cta: "View examples",
-    bgImage: "https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=1200&q=80",
+    bgImage: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&q=80",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const features = [
     description:
       "Add semantic HTML, ARIA attributes, and keyboard support. Improve readability and consistency without changing output.",
     cta: "Learn more",
-    bgImage: "https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?w=1200&q=80",
+    bgImage: "https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1200&q=80",
   },
 ];
 
@@ -56,7 +56,16 @@ export function Features() {
           >
               <div className={`flex flex-col ${index === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
                 {/* Text Content */}
-                <div className="flex flex-col justify-center p-6 sm:p-8 lg:w-[40%] lg:p-14">
+                <div
+                  className="order-2 lg:order-1 flex flex-col justify-center lg:w-[45%]"
+                  style={{
+                    padding: '24px',
+                    paddingTop: '32px',
+                    paddingBottom: '32px',
+                    paddingLeft: index === 1 ? '24px' : '24px',
+                    paddingRight: index === 1 ? '24px' : '24px',
+                  }}
+                >
                   <motion.h3
                     variants={fadeInUp}
                     initial="hidden"
@@ -96,7 +105,7 @@ export function Features() {
                 </div>
 
                 {/* Image Area with Cloud Background */}
-                <div className="relative lg:w-[60%]">
+                <div className="order-1 lg:order-2 relative lg:w-[55%]">
                   <div className="relative h-64 w-full overflow-hidden sm:h-80 md:h-96 lg:h-125">
                     {/* Atmospheric Cloud Background */}
                     <div

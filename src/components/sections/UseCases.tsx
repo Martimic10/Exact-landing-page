@@ -11,6 +11,8 @@ const tabs = [
     description:
       "Exact analyzes your React components and applies precise UI improvements — cleaner JSX, better Tailwind usage, and improved visual hierarchy — without changing behavior.",
     cta: "See it in action",
+    bgImage: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200&q=80",
+    mockup: "/polish.png",
   },
   {
     id: "layout-spacing",
@@ -19,6 +21,8 @@ const tabs = [
     description:
       "Exact fixes inconsistent margins, padding, and layout issues using modern frontend best practices — so your UI looks intentional, not accidental.",
     cta: "Learn more",
+    bgImage: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&q=80",
+    mockup: "/layout.png",
   },
   {
     id: "accessibility",
@@ -27,6 +31,8 @@ const tabs = [
     description:
       "Exact automatically improves labels, focus states, semantics, and keyboard navigation — helping you ship accessible UI without slowing down.",
     cta: "Explore features",
+    bgImage: "https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1200&q=80",
+    mockup: "/accessibility.png",
   },
   {
     id: "refactors",
@@ -35,6 +41,8 @@ const tabs = [
     description:
       "Refactor frontend code with confidence. Exact makes minimal, scoped changes and shows a clear diff before anything is applied — no surprises.",
     cta: "Start building",
+    bgImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80",
+    mockup: "/refactors.png",
   },
 ];
 
@@ -44,20 +52,17 @@ export function UseCases() {
   const activeContent = tabs.find((tab) => tab.id === activeTab);
 
   return (
-    <section className="relative pt-32 pb-24 md:pt-48 md:pb-40">
+    <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 lg:pt-48 lg:pb-40">
       <div className="flex flex-col items-center" style={{ paddingLeft: '24px', paddingRight: '24px' }}>
         {/* Section Header */}
-        <div className="w-full max-w-5xl" style={{ marginBottom: '48px' }}>
+        <div className="w-full max-w-5xl" style={{ marginBottom: '80px' }}>
           <h2 className="text-2xl font-medium text-white sm:text-3xl md:text-4xl lg:text-5xl">
             One tool. <span className="text-gray-500">Every use case.</span>
           </h2>
         </div>
 
         {/* Tabs */}
-        <div
-          className="flex w-full max-w-5xl justify-start overflow-x-auto"
-          style={{ marginBottom: '48px' }}
-        >
+        <div className="flex w-full max-w-5xl justify-start overflow-x-auto" style={{ marginBottom: '48px' }}>
           <div
             className="inline-flex gap-1 rounded-lg p-1"
             style={{ backgroundColor: '#1a1a1a' }}
@@ -66,14 +71,14 @@ export function UseCases() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
+                className="transition-all duration-200"
                 style={{
                   backgroundColor: activeTab === tab.id ? '#2a2a2a' : 'transparent',
                   color: activeTab === tab.id ? '#ffffff' : '#6b7280',
-                  padding: '10px 20px',
-                  fontSize: '14px',
+                  padding: '8px 16px',
+                  fontSize: '13px',
                   fontWeight: 500,
                   borderRadius: '6px',
-                  transition: 'all 0.2s',
                   whiteSpace: 'nowrap',
                 }}
               >
@@ -84,91 +89,110 @@ export function UseCases() {
         </div>
 
         {/* Content Area */}
-        <div className="w-full max-w-5xl overflow-hidden rounded-2xl" style={{ backgroundColor: '#0a0a0a' }}>
+        <div className="w-full max-w-5xl rounded-2xl overflow-hidden relative" style={{ marginTop: '0px' }}>
+          {/* Background Image */}
+          <img
+            src={activeContent?.bgImage}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{
+              filter: 'brightness(0.35) saturate(0.8)',
+            }}
+          />
+          {/* Gradient overlay */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, transparent 50%, rgba(0, 0, 0, 0.3) 100%)',
+            }}
+          />
+
+          {/* Mockup Container */}
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="flex flex-col"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25 }}
+              className="relative flex items-center justify-center h-80 sm:h-96 md:h-112 lg:h-140"
+              style={{
+                padding: '24px',
+              }}
             >
-              {/* Image Area - Full width on top */}
-              <div className="relative w-full">
-                <div
-                  className="relative h-96 w-full overflow-hidden rounded-2xl sm:h-112 md:h-140"
-                  style={{ backgroundColor: '#1a1a1a' }}
-                >
-                  <div
-                    className="absolute inset-0 flex items-center justify-center"
-                    style={{ padding: '16px' }}
-                  >
-                    {activeTab === "component-polish" && (
-                      <img
-                        src="/component-polish.png"
-                        alt="Component Polish"
-                        className="h-full w-full object-contain object-center"
-                        style={{ maxHeight: '100%', maxWidth: '100%' }}
-                      />
-                    )}
-                    {activeTab === "layout-spacing" && (
-                      <img
-                        src="/layout-spacing.png"
-                        alt="Layout & Spacing"
-                        className="h-full w-full object-contain object-center"
-                        style={{ maxHeight: '100%', maxWidth: '100%' }}
-                      />
-                    )}
-                    {activeTab === "accessibility" && (
-                      <img
-                        src="/exact-accessibility.png"
-                        alt="Accessibility"
-                        className="h-full w-full object-contain object-center"
-                        style={{ maxHeight: '100%', maxWidth: '100%' }}
-                      />
-                    )}
-                    {activeTab === "refactors" && (
-                      <img
-                        src="/exact-refactors.png"
-                        alt="Refactors"
-                        className="h-full w-full object-contain object-center"
-                        style={{ maxHeight: '100%', maxWidth: '100%' }}
-                      />
-                    )}
-                  </div>
-                </div>
-              </div>
-
+              <img
+                src={activeContent?.mockup}
+                alt={activeContent?.title}
+                className="max-h-full max-w-full object-contain"
+                style={{
+                  borderRadius: '12px',
+                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.6)',
+                }}
+              />
             </motion.div>
           </AnimatePresence>
         </div>
 
-        {/* Text Content - Outside card, on black background */}
-        <div className="flex w-full max-w-5xl items-center justify-between pt-6">
-          <div className="flex-1 pr-4">
-            <p style={{ color: '#6b7280', fontSize: '12px', marginBottom: '12px' }}>{activeContent?.label}</p>
-            <p style={{ color: '#ffffff', fontSize: '20px', lineHeight: '1.8', letterSpacing: '0.01em' }}>
-              {activeContent?.description}
-            </p>
-          </div>
-          <div className="shrink-0">
-            <button
-              type="button"
-              onMouseEnter={() => setButtonHovered(true)}
-              onMouseLeave={() => setButtonHovered(false)}
-              style={{
-                backgroundColor: buttonHovered ? '#e5e5e5' : '#ffffff',
-                color: '#000000',
-                borderRadius: '8px',
-                padding: '14px 24px',
-                fontSize: '14px',
-                fontWeight: 500,
-                whiteSpace: 'nowrap',
-              }}
-            >
-              {activeContent?.cta}
-            </button>
+        {/* Text Content Card */}
+        <div
+          className="w-full max-w-5xl rounded-2xl overflow-hidden relative"
+          style={{ marginTop: '24px', backgroundColor: '#0a0a0a' }}
+        >
+          {/* Space Background */}
+          <img
+            src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1200&q=80"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{
+              filter: 'brightness(0.3) saturate(0.7)',
+            }}
+          />
+          {/* Gradient overlay */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%)',
+            }}
+          />
+
+          {/* Content */}
+          <div
+            className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-8"
+            style={{ padding: '40px 48px' }}
+          >
+            <div className="flex-1">
+              <p
+                className="text-gray-400 uppercase tracking-wider"
+                style={{ fontSize: '11px', marginBottom: '12px', fontWeight: 600 }}
+              >
+                {activeContent?.label}
+              </p>
+              <p
+                className="text-white leading-relaxed"
+                style={{ fontSize: '15px', maxWidth: '600px' }}
+              >
+                {activeContent?.description}
+              </p>
+            </div>
+            <div className="shrink-0">
+              <button
+                type="button"
+                onMouseEnter={() => setButtonHovered(true)}
+                onMouseLeave={() => setButtonHovered(false)}
+                className="transition-colors duration-200"
+                style={{
+                  backgroundColor: buttonHovered ? '#e5e5e5' : '#ffffff',
+                  color: '#000000',
+                  borderRadius: '8px',
+                  padding: '14px 24px',
+                  fontSize: '14px',
+                  fontWeight: 500,
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {activeContent?.cta}
+              </button>
+            </div>
           </div>
         </div>
       </div>

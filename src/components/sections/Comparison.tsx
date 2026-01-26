@@ -23,7 +23,7 @@ const exactFeatures = [
 export function Comparison() {
   return (
     <section className="relative" style={{ paddingTop: '100px', paddingBottom: '80px' }}>
-      <div className="flex flex-col items-center px-4 md:px-6">
+      <div className="flex flex-col items-center" style={{ paddingLeft: '24px', paddingRight: '24px' }}>
         {/* Badge */}
         <motion.div
           variants={fadeInUp}
@@ -60,27 +60,26 @@ export function Comparison() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2"
-          style={{ gap: '48px' }}
+          className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12"
         >
           {/* Other Tools Card */}
           <div
-            className="rounded-3xl md:rounded-4xl relative overflow-hidden"
+            className="rounded-2xl md:rounded-3xl relative overflow-hidden"
             style={{
-              padding: '48px 56px 56px 56px',
+              padding: '32px 28px',
               background: 'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)',
               boxShadow: 'inset 0 1px 0 0 rgba(255,255,255,0.05), 0 0 0 1px rgba(255,255,255,0.05)',
             }}
           >
-            <h3 className="text-xl md:text-2xl font-semibold text-white/80" style={{ marginBottom: '48px' }}>
+            <h3 className="text-lg md:text-2xl font-semibold text-white/80" style={{ marginBottom: '28px' }}>
               Other Tools
             </h3>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+            <ul style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               {otherTools.map((item, index) => (
-                <li key={index} style={{ display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
-                  <div className="w-6 h-6 md:w-7 md:h-7 rounded-full bg-red-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                <li key={index} style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
+                  <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-red-500/10 flex items-center justify-center shrink-0 mt-0.5">
                     <svg
-                      className="w-3 h-3 md:w-3.5 md:h-3.5"
+                      className="w-2.5 h-2.5 md:w-3 md:h-3"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="#ef4444"
@@ -92,7 +91,7 @@ export function Comparison() {
                       <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
                   </div>
-                  <span className="text-gray-500 text-base md:text-lg leading-relaxed">{item}</span>
+                  <span className="text-gray-500 text-sm md:text-base leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
@@ -100,9 +99,9 @@ export function Comparison() {
 
           {/* Exact Card */}
           <div
-            className="rounded-3xl md:rounded-4xl relative overflow-hidden"
+            className="rounded-2xl md:rounded-3xl relative overflow-hidden"
             style={{
-              padding: '48px 56px 56px 56px',
+              padding: '32px 28px',
               background: 'linear-gradient(180deg, rgba(34, 197, 94, 0.08) 0%, rgba(34, 197, 94, 0.02) 100%)',
               boxShadow: 'inset 0 1px 0 0 rgba(34, 197, 94, 0.15), 0 0 0 1px rgba(34, 197, 94, 0.15)',
             }}
@@ -116,24 +115,24 @@ export function Comparison() {
             />
 
             <div className="relative">
-              <div className="flex items-center gap-3 md:gap-4" style={{ marginBottom: '48px' }}>
+              <div className="flex items-center gap-2 md:gap-3" style={{ marginBottom: '28px' }}>
                 <Image
                   src="/exact-logo.png"
                   alt="Exact"
                   width={32}
                   height={32}
-                  className="w-6 h-6 md:w-8 md:h-8"
+                  className="w-5 h-5 md:w-7 md:h-7"
                 />
-                <h3 className="text-xl md:text-2xl font-semibold text-white">
+                <h3 className="text-lg md:text-2xl font-semibold text-white">
                   Exact
                 </h3>
               </div>
-              <ul style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+              <ul style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 {exactFeatures.map((item, index) => (
-                  <li key={index} style={{ display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
-                    <div className="w-6 h-6 md:w-7 md:h-7 rounded-full bg-green-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                  <li key={index} style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
+                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-green-500/20 flex items-center justify-center shrink-0 mt-0.5">
                       <svg
-                        className="w-3 h-3 md:w-3.5 md:h-3.5"
+                        className="w-2.5 h-2.5 md:w-3 md:h-3"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="#22c55e"
@@ -144,7 +143,7 @@ export function Comparison() {
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
                     </div>
-                    <span className="text-gray-200 text-base md:text-lg leading-relaxed">{item}</span>
+                    <span className="text-gray-200 text-sm md:text-base leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
