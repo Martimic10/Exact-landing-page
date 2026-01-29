@@ -10,7 +10,7 @@ const features = [
     description:
       "Clean up JSX, classNames, and structure without changing behavior. Exact understands your components and makes them better.",
     cta: "See it in action",
-    bgImage: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200&q=80",
+    bgImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const features = [
     description:
       "Fix alignment, spacing, and responsiveness safely. No more broken layouts from AI edits.",
     cta: "View examples",
-    bgImage: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&q=80",
+    bgImage: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const features = [
     description:
       "Add semantic HTML, ARIA attributes, and keyboard support. Improve readability and consistency without changing output.",
     cta: "Learn more",
-    bgImage: "https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1200&q=80",
+    bgImage: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80",
   },
 ];
 

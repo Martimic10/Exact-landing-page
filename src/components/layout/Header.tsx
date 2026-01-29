@@ -59,7 +59,8 @@ const mobileNavLinks = [
 
 export function Header() {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
-  const [buttonHovered, setButtonHovered] = useState(false);
+  const [signInHovered, setSignInHovered] = useState(false);
+  const [getStartedHovered, setGetStartedHovered] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
 
@@ -181,24 +182,39 @@ export function Header() {
               </div>
             </div>
 
-            {/* Right side - Waitlist button and hamburger */}
+            {/* Right side - Sign in and Get Started buttons */}
             <div className="flex items-center gap-3">
-              {/* Waitlist button - always visible */}
+              {/* Sign in - text link style */}
               <a
-                href="#waitlist"
-                onMouseEnter={() => setButtonHovered(true)}
-                onMouseLeave={() => setButtonHovered(false)}
-                className="transition-all duration-200"
+                href="/signin"
+                onMouseEnter={() => setSignInHovered(true)}
+                onMouseLeave={() => setSignInHovered(false)}
+                className="hidden sm:block transition-colors duration-200"
                 style={{
-                  border: `1px solid ${buttonHovered ? '#9ca3af' : '#6b7280'}`,
-                  borderRadius: 9999,
-                  padding: '6px 16px',
-                  color: buttonHovered ? '#ffffff' : '#d1d5db',
+                  color: signInHovered ? '#ffffff' : '#9ca3af',
                   fontSize: 14,
-                  background: 'transparent'
+                  fontWeight: 500,
                 }}
               >
-                Waitlist
+                Sign in
+              </a>
+
+              {/* Get Started - filled button */}
+              <a
+                href="#waitlist"
+                onMouseEnter={() => setGetStartedHovered(true)}
+                onMouseLeave={() => setGetStartedHovered(false)}
+                className="transition-all duration-200"
+                style={{
+                  backgroundColor: getStartedHovered ? '#e5e5e5' : '#ffffff',
+                  borderRadius: '8px',
+                  padding: '8px 16px',
+                  color: '#000000',
+                  fontSize: 14,
+                  fontWeight: 500,
+                }}
+              >
+                Get Started
               </a>
 
               {/* Hamburger button - visible on mobile only */}
