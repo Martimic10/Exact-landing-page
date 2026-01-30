@@ -57,7 +57,11 @@ const mobileNavLinks = [
   { label: "Community", href: "/community" },
 ];
 
-export function Header() {
+interface HeaderProps {
+  solidBackground?: boolean;
+}
+
+export function Header({ solidBackground = false }: HeaderProps) {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const [signInHovered, setSignInHovered] = useState(false);
   const [downloadHovered, setDownloadHovered] = useState(false);
@@ -70,7 +74,7 @@ export function Header() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="fixed left-0 right-0 top-0 z-50 border-b border-white/5 bg-black/80 backdrop-blur-md"
+        className={`fixed left-0 right-0 top-0 z-50 border-b border-white/5 ${solidBackground ? 'bg-[#0a0a0a]' : 'bg-black/80 backdrop-blur-md'}`}
       >
         <div className="w-full" style={{ paddingLeft: '48px', paddingRight: '48px' }}>
           <nav className="flex h-16 items-center justify-between">
