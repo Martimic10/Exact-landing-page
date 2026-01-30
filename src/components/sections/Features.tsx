@@ -129,7 +129,7 @@ export function Features() {
                     {/* Mockup Image */}
                     <div
                       className="absolute inset-0 flex items-center justify-center"
-                      style={{ padding: '24px' }}
+                      style={{ padding: index === 1 ? '16px' : '24px' }}
                     >
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -138,12 +138,12 @@ export function Features() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="relative"
                         style={{
-                          maxWidth: '90%',
-                          maxHeight: '90%',
+                          maxWidth: index === 1 ? '95%' : '90%',
+                          maxHeight: index === 1 ? '95%' : '90%',
                         }}
                       >
                         <img
-                          src={index === 0 ? "/component-feature-ui.png" : index === 1 ? "/react-beyond.png" : "/exact-faster.png"}
+                          src={index === 0 ? "/exact-polish.png" : index === 1 ? "/exact-layout.png" : "/exact-ally.png"}
                           alt={feature.title}
                           className="h-full w-full object-contain"
                           style={{
