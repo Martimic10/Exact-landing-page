@@ -72,18 +72,37 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Hero Image with Space Background */}
+      {/* Mobile: Simple mockup without background */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
-        className="relative w-full max-w-5xl overflow-hidden rounded-2xl"
+        className="relative w-full sm:hidden"
+        style={{ marginTop: '48px' }}
+      >
+        <img
+          src="/exact-hero-mockup.png"
+          alt="Exact AI Code Editor"
+          className="w-full h-auto cursor-pointer"
+          style={{
+            borderRadius: '12px',
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.6)',
+          }}
+          onClick={() => setIsModalOpen(true)}
+        />
+      </motion.div>
+
+      {/* Desktop: Hero Image with Space Background */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
+        className="relative w-full max-w-5xl overflow-hidden rounded-2xl hidden sm:block"
         style={{ marginTop: '48px' }}
       >
         {/* Space Background */}
         <div
-          className="relative w-full"
-          style={{ height: '500px', minHeight: '500px' }}
+          className="relative w-full sm:h-[400px] md:h-[500px]"
         >
           <img
             src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=80"
@@ -109,8 +128,7 @@ export function Hero() {
 
           {/* Mockup Image Overlay */}
           <div
-            className="absolute inset-0 flex items-center justify-center"
-            style={{ padding: '48px' }}
+            className="absolute inset-0 flex items-center justify-center p-6 md:p-12"
           >
             <img
               src="/exact-hero-mockup.png"

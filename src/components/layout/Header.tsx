@@ -60,7 +60,7 @@ const mobileNavLinks = [
 export function Header() {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const [signInHovered, setSignInHovered] = useState(false);
-  const [getStartedHovered, setGetStartedHovered] = useState(false);
+  const [downloadHovered, setDownloadHovered] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
 
@@ -72,9 +72,9 @@ export function Header() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="fixed left-0 right-0 top-0 z-50 border-b border-white/5 bg-black/80 backdrop-blur-md"
       >
-        <div className="mx-auto w-full" style={{ paddingLeft: '15%', paddingRight: '15%' }}>
+        <div className="w-full" style={{ paddingLeft: '48px', paddingRight: '48px' }}>
           <nav className="flex h-16 items-center justify-between">
-            {/* Logo */}
+            {/* Logo - Left */}
             <a
               href="/"
               className="flex items-center gap-1 text-lg font-medium text-white"
@@ -182,9 +182,27 @@ export function Header() {
               </div>
             </div>
 
-            {/* Right side - Sign in and Get Started buttons */}
+            {/* Right side - Sign in and Download buttons */}
             <div className="flex items-center gap-3">
-              {/* Sign in - text link style */}
+              {/* Sign in - shows on mobile, Download shows on desktop */}
+              <a
+                href="/signin"
+                onMouseEnter={() => setSignInHovered(true)}
+                onMouseLeave={() => setSignInHovered(false)}
+                className="sm:hidden transition-all duration-200"
+                style={{
+                  backgroundColor: signInHovered ? '#e5e5e5' : '#ffffff',
+                  borderRadius: '8px',
+                  padding: '8px 16px',
+                  color: '#000000',
+                  fontSize: 14,
+                  fontWeight: 500,
+                }}
+              >
+                Sign in
+              </a>
+
+              {/* Sign in text link - desktop only */}
               <a
                 href="/signin"
                 onMouseEnter={() => setSignInHovered(true)}
@@ -199,14 +217,14 @@ export function Header() {
                 Sign in
               </a>
 
-              {/* Get Started - filled button */}
+              {/* Download - filled button, hidden on mobile */}
               <a
-                href="#waitlist"
-                onMouseEnter={() => setGetStartedHovered(true)}
-                onMouseLeave={() => setGetStartedHovered(false)}
-                className="transition-all duration-200"
+                href="/download"
+                onMouseEnter={() => setDownloadHovered(true)}
+                onMouseLeave={() => setDownloadHovered(false)}
+                className="hidden sm:block transition-all duration-200"
                 style={{
-                  backgroundColor: getStartedHovered ? '#e5e5e5' : '#ffffff',
+                  backgroundColor: downloadHovered ? '#e5e5e5' : '#ffffff',
                   borderRadius: '8px',
                   padding: '8px 16px',
                   color: '#000000',
@@ -214,7 +232,7 @@ export function Header() {
                   fontWeight: 500,
                 }}
               >
-                Get Started
+                Download
               </a>
 
               {/* Hamburger button - visible on mobile only */}

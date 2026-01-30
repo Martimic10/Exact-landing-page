@@ -11,7 +11,7 @@ const tabs = [
     description:
       "Exact analyzes your React components and applies precise UI improvements — cleaner JSX, better Tailwind usage, and improved visual hierarchy — without changing behavior.",
     cta: "See it in action",
-    bgImage: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200&q=80",
+    bgImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80",
     mockup: "/polish.png",
   },
   {
@@ -21,7 +21,7 @@ const tabs = [
     description:
       "Exact fixes inconsistent margins, padding, and layout issues using modern frontend best practices — so your UI looks intentional, not accidental.",
     cta: "Learn more",
-    bgImage: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&q=80",
+    bgImage: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80",
     mockup: "/layout.png",
   },
   {
@@ -31,7 +31,7 @@ const tabs = [
     description:
       "Exact automatically improves labels, focus states, semantics, and keyboard navigation — helping you ship accessible UI without slowing down.",
     cta: "Explore features",
-    bgImage: "https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=1200&q=80",
+    bgImage: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80",
     mockup: "/accessibility.png",
   },
   {
@@ -41,7 +41,7 @@ const tabs = [
     description:
       "Refactor frontend code with confidence. Exact makes minimal, scoped changes and shows a clear diff before anything is applied — no surprises.",
     cta: "Start building",
-    bgImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80",
+    bgImage: "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=1200&q=80",
     mockup: "/refactors.png",
   },
 ];
@@ -138,9 +138,9 @@ export function UseCases() {
           className="w-full max-w-5xl rounded-2xl overflow-hidden relative"
           style={{ marginTop: '24px', backgroundColor: '#0a0a0a' }}
         >
-          {/* Space Background */}
+          {/* Mountain Background */}
           <img
-            src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1200&q=80"
+            src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1200&q=80"
             alt=""
             className="absolute inset-0 w-full h-full object-cover"
             style={{
