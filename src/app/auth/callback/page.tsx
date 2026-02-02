@@ -45,11 +45,12 @@ export default function AuthCallbackPage() {
         if (isDesktopFlow && session) {
           setStatus("Redirecting to Exact...");
 
-          // Build the deep link URL with tokens in the hash
-          const deepLinkUrl = `exact://auth/callback#access_token=${session.access_token}&refresh_token=${session.refresh_token}&expires_in=${session.expires_in}&token_type=${session.token_type}`;
+          // Build the redirect URL with tokens in the hash
+          // TODO: Change to exact://auth/callback for production
+          const redirectUrl = `http://localhost:5173/auth/callback#access_token=${session.access_token}&refresh_token=${session.refresh_token}&expires_in=${session.expires_in}&token_type=${session.token_type}`;
 
           // Redirect to the desktop app
-          window.location.href = deepLinkUrl;
+          window.location.href = redirectUrl;
           return;
         }
 
