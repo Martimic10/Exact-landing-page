@@ -82,7 +82,7 @@ export default function DownloadPage() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#0a0a0a" }}>
+    <div style={{ minHeight: "100vh", backgroundColor: "#000000" }}>
       <Header solidBackground />
 
       <main className="download-main">
@@ -162,7 +162,7 @@ export default function DownloadPage() {
               <div
                 key={release.version}
                 style={{
-                  backgroundColor: "#0a0a0a",
+                  backgroundColor: "#000000",
                   border: "1px solid rgba(255, 255, 255, 0.1)",
                   borderRadius: "12px",
                   overflow: "hidden",

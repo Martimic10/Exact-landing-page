@@ -182,8 +182,8 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
     <div
       style={{
         minHeight: '100vh',
-        backgroundColor: isDark ? '#0a0a0a' : '#ffffff',
-        color: isDark ? '#ffffff' : '#0a0a0a',
+        backgroundColor: isDark ? '#000000' : '#ffffff',
+        color: isDark ? '#ffffff' : '#000000',
       }}
     >
       {/* Search Modal */}
@@ -248,7 +248,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                     border: 'none',
                     outline: 'none',
                     fontSize: '16px',
-                    color: isDark ? '#ffffff' : '#0a0a0a',
+                    color: isDark ? '#ffffff' : '#000000',
                   }}
                 />
                 <kbd
@@ -284,7 +284,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                         cursor: 'pointer',
                         textAlign: 'left',
                         textDecoration: 'none',
-                        color: isDark ? '#ffffff' : '#0a0a0a',
+                        color: isDark ? '#ffffff' : '#000000',
                         transition: 'background-color 0.15s',
                       }}
                       onMouseEnter={(e) => e.currentTarget.style.backgroundColor = isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.03)'}
@@ -525,7 +525,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                 width: '85%',
                 maxWidth: '320px',
                 overflowY: 'auto',
-                backgroundColor: isDark ? '#0a0a0a' : '#ffffff',
+                backgroundColor: isDark ? '#000000' : '#ffffff',
                 borderRight: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
               }}
             >
@@ -592,7 +592,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
             bottom: 0,
             width: '260px',
             overflowY: 'auto',
-            backgroundColor: isDark ? '#0a0a0a' : '#ffffff',
+            backgroundColor: isDark ? '#000000' : '#ffffff',
             borderRight: `1px solid ${isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
           }}
         >
@@ -664,7 +664,7 @@ function SidebarContent({ pathname, isDark, onNavigate }: { pathname: string; is
                         ? isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)'
                         : 'transparent',
                       color: isActive
-                        ? isDark ? '#ffffff' : '#0a0a0a'
+                        ? isDark ? '#ffffff' : '#000000'
                         : isDark ? '#9ca3af' : '#6b7280',
                       fontWeight: isActive ? 500 : 400,
                       transition: 'background-color 0.15s, color 0.15s',

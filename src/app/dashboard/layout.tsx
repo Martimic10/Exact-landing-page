@@ -101,7 +101,7 @@ export default function DashboardLayout({
       <div
         style={{
           minHeight: "100vh",
-          backgroundColor: "#0a0a0a",
+          backgroundColor: "#000000",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -166,7 +166,7 @@ export default function DashboardLayout({
   );
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#0a0a0a" }}>
+    <div style={{ minHeight: "100vh", backgroundColor: "#000000" }}>
       {/* Top Header */}
       <header
         style={{
@@ -176,9 +176,11 @@ export default function DashboardLayout({
           alignItems: "center",
           justifyContent: "space-between",
           padding: "0 16px",
-          position: "sticky",
+          position: "fixed",
           top: 0,
-          backgroundColor: "#0a0a0a",
+          left: 0,
+          right: 0,
+          backgroundColor: "#000000",
           zIndex: 40,
         }}
       >
@@ -279,7 +281,7 @@ export default function DashboardLayout({
         </div>
       </header>
 
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", paddingTop: "56px" }}>
         {/* Desktop Sidebar */}
         <aside
           className="hidden md:block"
@@ -287,8 +289,12 @@ export default function DashboardLayout({
             width: "256px",
             borderRight: "1px solid rgba(255, 255, 255, 0.1)",
             padding: "24px 16px",
-            minHeight: "calc(100vh - 56px)",
-            flexShrink: 0,
+            position: "fixed",
+            top: "56px",
+            left: 0,
+            bottom: 0,
+            backgroundColor: "#000000",
+            overflowY: "auto",
           }}
         >
           <SidebarContent />
@@ -326,7 +332,7 @@ export default function DashboardLayout({
                   left: 0,
                   bottom: 0,
                   width: "280px",
-                  backgroundColor: "#0a0a0a",
+                  backgroundColor: "#000000",
                   borderRight: "1px solid rgba(255, 255, 255, 0.1)",
                   padding: "24px 16px",
                   zIndex: 35,
@@ -347,6 +353,7 @@ export default function DashboardLayout({
             maxWidth: "900px",
             margin: "0 auto",
             width: "100%",
+            minHeight: "calc(100vh - 56px)",
           }}
           className="dashboard-main"
         >
@@ -368,6 +375,7 @@ export default function DashboardLayout({
           }
           .dashboard-main {
             padding: 32px 48px;
+            margin-left: 256px !important;
           }
         }
         @media (min-width: 1024px) {

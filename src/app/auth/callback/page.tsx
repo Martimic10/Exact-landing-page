@@ -11,8 +11,14 @@ export default function AuthCallbackPage() {
   useEffect(() => {
     const handleAuthCallback = async () => {
       try {
+        // Check if this is a desktop auth flow
+        const isDesktopFlow = sessionStorage.getItem("auth_flow") === "desktop";
+
+        // Clear the flag
+        sessionStorage.removeItem("auth_flow");
+
         // Get the session - Supabase automatically handles the OAuth callback
-        const { data: { session }, error } = await supabase.auth.getSession();
+        let { data: { session }, error } = await supabase.auth.getSession();
 
         if (error) {
           console.error("Auth error:", error);
@@ -32,12 +38,22 @@ export default function AuthCallbackPage() {
             return;
           }
 
-          // Session established - go to dashboard
-          router.push("/dashboard");
+          session = data.session;
+        }
+
+        // If this is a desktop auth flow, redirect to the desktop app
+        if (isDesktopFlow && session) {
+          setStatus("Redirecting to Exact...");
+
+          // Build the deep link URL with tokens in the hash
+          const deepLinkUrl = `exact://auth/callback#access_token=${session.access_token}&refresh_token=${session.refresh_token}&expires_in=${session.expires_in}&token_type=${session.token_type}`;
+
+          // Redirect to the desktop app
+          window.location.href = deepLinkUrl;
           return;
         }
 
-        // We have a session - go to dashboard
+        // Web flow - go to dashboard
         router.push("/dashboard");
       } catch (err) {
         console.error("Callback error:", err);
